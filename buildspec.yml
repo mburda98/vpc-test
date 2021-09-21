@@ -12,3 +12,7 @@ phases:
     commands:
       - echo Build started on `date`
       - docker build . -f ./Dockerfile
+  post_build:
+    commands:
+      - echo Pushing image to ECR...
+      - docker push 108607216059.dkr.ecr.eu-west-2.amazonaws.com/vpc-test:latest
