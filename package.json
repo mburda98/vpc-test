@@ -1,0 +1,10 @@
+{
+  "name": "vpc",
+  "version": "1.0.0",
+  "description": "VPC TEST",
+  "main": "server.js",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
