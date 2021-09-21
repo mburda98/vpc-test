@@ -15,5 +15,5 @@ phases:
   post_build:
     commands:
       - echo Pushing image to ECR...
-      - aws ecr get-login --no-include-email --region=eu-west-2
+      - aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 108607216059.dkr.ecr.eu-west-2.amazonaws.com
       - docker push 108607216059.dkr.ecr.eu-west-2.amazonaws.com/vpc-test:latest
