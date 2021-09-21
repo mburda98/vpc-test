@@ -15,4 +15,5 @@ phases:
   post_build:
     commands:
       - echo Pushing image to ECR...
+      - aws ecr get-login --no-include-email --profile=mburda --region=eu-west-2
       - docker push 108607216059.dkr.ecr.eu-west-2.amazonaws.com/vpc-test:latest
