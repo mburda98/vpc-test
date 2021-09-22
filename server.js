@@ -7,6 +7,11 @@ app.get("/", (req, res) => {
   res.send("Hello World from auto docker!!!");
 });
 
-app.listen(port, "0.0.0.0", () => {
+const server = app.listen(port, "0.0.0.0", () => {
   console.log(`Example app listening at http://0.0.0.0:${port}`);
+});
+
+process.on("SIGTERM", () => {
+  console.info("SIGTERM signal received.");
+  server.close();
 });
