@@ -1,11 +1,13 @@
 version: 0.2
+
+env:
+  secrets-manager:
+    SSHPASS: arn:aws:secretsmanager:eu-west-2:108607216059:secret:ec2PasswordSecret-nyXSpa
+
 phases:
   install:
     runtime-versions:
       docker: 18
-  env: 
-    secrets-manager:
-      SSHPASS: arn:aws:secretsmanager:eu-west-2:108607216059:secret:ec2PasswordSecret-nyXSpa
   pre_build:
     commands:
       - echo "Starting docker daemon..."
