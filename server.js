@@ -4,7 +4,7 @@ const port = 80;
 
 app.get("/", (req, res) => {
   console.log("hejo");
-  res.send("Hello World from auto docker!");
+  res.send("Hello World from auto docker!!!");
 });
 
 app.listen(port, "0.0.0.0", () => {
