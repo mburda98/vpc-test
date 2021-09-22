@@ -1,8 +1,8 @@
 version: 0.2
 
-env:
-  secrets-manager:
-    SSHPASSTMP: ec2PasswordSecret:ec2Password
+# env:
+#   secrets-manager:
+#     SSHPASSTMP: ec2PasswordSecret:ec2Password
 
 phases:
   install:
@@ -24,6 +24,5 @@ phases:
       # - docker push 108607216059.dkr.ecr.eu-west-2.amazonaws.com/vpc-test:latest
       - echo Rebooting EC2
       - yum -y install sshpass
-      - export SSHPASS=$SSHPASSTMP
       - echo $SSHPASS
       - sshpass -e ssh ubuntu@ec2-18-130-102-119.eu-west-2.compute.amazonaws.com 'sudo systemctl restart hello.service'
